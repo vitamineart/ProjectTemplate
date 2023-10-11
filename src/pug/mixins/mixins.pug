@@ -41,7 +41,10 @@ mixin imgBlur(x)
     )
         +image(x)&attributes(attributes)
 
-
+mixin picture(x)
+    picture
+        each source in x.sources
+            source(media=`${source.mediaMin ? `(min-with:${source.media}px)` : `(max-with:${source.media}px)`}` sizes=source.sizes srcset=source.resolutions)
 
 mixin image(x)
     if x.resolutions

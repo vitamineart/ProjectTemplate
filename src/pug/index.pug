@@ -76,7 +76,18 @@ block page
                 thumb: '../media/Hero-blurred.jpg',
             })(alt="Hero BG"  width="1920" height="1280" src="../media/Hero@1600.jpg")
 
+            +picture({
+                sources: {
+                    1: {
+                        media: 768,
+                        sizes: "(max-width: 767px) 100vw",
+                        srcset:
+                    },
+                    2: {
 
+                    }
+                }
+            })
 
 append footer_scripts
     script(src="js/home.js" defer)
