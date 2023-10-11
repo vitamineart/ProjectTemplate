@@ -115,7 +115,7 @@ In that case you can just create a tumbnail image with '-blurred' prefix in its 
 
 Another option (using Gulp Task) for creating thumbnails is described below.
 
-## Creating blurred thumbnails easy (using Gulp Task)
+### Creating blurred thumbnails easy (using Gulp Task)
 
 `gulpfile.js` contains a standalone task `imgResize` for creating thumbnails for the technique described above, where you can configure source file, size (10px usually good enough for blurred image with very low weight) and result file name.
 Example from gulpfilejs:
@@ -142,4 +142,27 @@ function imgResize() {
 ...
 exports.imgResize = imgResize;
 ...
+```
+
+### Turn off blurred thumbnail preview image loading
+
+To turn off the feature, remove the code from `main.js`:
+
+```sh
+// BLurred Preview image Lazy Loading
+if (document.querySelectorAll(".blur-load").length) {
+  const blurDivs = document.querySelectorAll(".blur-load");
+  blurDivs.forEach(div => {
+    const img = document.querySelector("img");
+    function loaded() {
+      div.classList.add("loaded");
+    }
+
+    if (img.complete) {
+      loaded();
+    } else {
+      img.addEventListener("load", loaded);
+    }
+  });
+}
 ```

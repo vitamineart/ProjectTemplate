@@ -112,6 +112,7 @@ if (logoText) {
     );
 }
 
+// BLurred Preview image Lazy Loading
 if (document.querySelectorAll(".blur-load").length) {
   const blurDivs = document.querySelectorAll(".blur-load");
   blurDivs.forEach(div => {
