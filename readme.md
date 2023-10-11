@@ -65,7 +65,12 @@ To change the path of files and destination/build folder, edit options in **conf
 
 The technique was described here https://www.youtube.com/watch?v=hJ7Rg1821Q0.
 
-To use the mixin you need to pass an object with variables as props for the mixin. It should contain either `thumb:` or `prefix:` key. `thumb:` key should be used along with `src:` key for image (+image mixin with simple config, aka simple `<img>` tag)
+To use the mixin you need to pass an object with variables as props for the mixin. It should contain either `thumb:` or `prefix:` key.
+
+`thumb:` key is a string that should be a full path to an image like `'../media/image-blurred.jpg'`
+`thumb:` key should be used along with `src:` key for image (+image mixin with simple config, aka simple `<img>` tag).
+`src` key is also a string that should be a full path to an image like `'../media/image.jpg'`
+
 If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
 
 Using `+imgBlur` for <b>Responsive Image</b> mixin with `prefix` key specified:
@@ -167,7 +172,7 @@ if (document.querySelectorAll(".blur-load").length) {
 }
 ```
 
-as well as remove style for it from CSS:
+as well as remove style for it from `style.css`:
 
 ```sh
 /* lazy load img with blur effect start */
