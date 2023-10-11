@@ -34,12 +34,12 @@ mixin iconMulti(x)
     svg(class=`svg` class=x.class style=x.style)
         use(xlink:href=`media/icons/icons-sprite-multi.svg#${x.icon}`)
 
-mixin imgBlur( x )
+mixin imgBlur(x)
     div(
         class="blur-load"
         style=`background-image: url(${ x.thumb || `${mediaFolder}${x.name}-${x.prefix ? x.prefix : 'blurred' }.${x.ext}`})`
     )
-        +image( x )&attributes(attributes)
+        +image(x)&attributes(attributes)
 
 
 
@@ -62,7 +62,7 @@ mixin image(x)
             `
             sizes=x.sizes
         )&attributes(attributes)
-    else if !x.resolutions && x.src
+    else
         img(
             id=x.id
             width=x.width

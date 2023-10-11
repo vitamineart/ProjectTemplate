@@ -68,8 +68,14 @@ The technique was described here https://www.youtube.com/watch?v=hJ7Rg1821Q0.
 To use the mixin you need to pass an object with variables as props for the mixin. It should contain either `thumb:` or `prefix:` key.
 
 `thumb:` key is a string that should be a full path to an image like `'../media/image-blurred.jpg'`
-`thumb:` key should be used along with `src:` key for image (+image mixin with simple config, aka simple `<img>` tag).
+
+`thumb:` key should be used for `+image` mixin with simple config, aka simple `<img>` tag.
 `src` key is also a string that should be a full path to an image like `'../media/image.jpg'`
+`src` key can be ommited, but another option to give a path to an image should be used: via attributes. Example:
+
+```
+
+```
 
 If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
 
