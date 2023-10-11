@@ -65,9 +65,9 @@ To change the path of files and destination/build folder, edit options in **conf
 
 The technique was described here https://www.youtube.com/watch?v=hJ7Rg1821Q0.
 
-To use the mixin you need to pass an object with variables as props for the mixin. It should contain either `thumb:` or `prefix:` key.
+To use the mixin you need to pass an object with variables as props for the mixin. It should contain either 1) `thumb:` or 2) `prefix:` key.
 
-`thumb:` key is a string that should be a full path to an image like `'../media/image-blurred.jpg'`
+1. `thumb:` key is a string that should be a full path to an image like `'../media/image-blurred.jpg'`
 
 `thumb:` key should be used for `+image` mixin with simple config, aka simple `<img>` tag.
 `src` key is also a string that should be a full path to an image like `'../media/image.jpg'`
@@ -89,7 +89,7 @@ or
 })(alt="Hero BG"  width="1920" height="1280" src="../media/Hero@1600.jpg")
 ```
 
-If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
+2. If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
 
 Using `+imgBlur` for <b>Responsive Image</b> mixin with `prefix` key specified:
 
