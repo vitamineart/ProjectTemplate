@@ -69,7 +69,7 @@ Other option (using Gulp Task) for creating thumbnails is described below.
 
 ## Creating blurred thumbnails easy (using Gulp Task)
 
-`gulpfile.js` contains a standalone task `imgResize` for creating thumbnails for this technique, where you can configure source file, size (10px usually good enough for blurred image with very low weight) and result file name.
+`gulpfile.js` contains a standalone task `imgResize` for creating thumbnails for the technique described above, where you can configure source file, size (10px usually good enough for blurred image with very low weight) and result file name.
 Example from gulpfilejs:
 
 ```sh
@@ -83,10 +83,10 @@ function imgResize() {
     .pipe(
       rename(function (path) {
         // Updates the object in-place
-        path.basename = "hhero-blurred";
+        path.basename = "hhero-blurred"
       })
     )
-    .pipe(dest(`${options.paths.src.media}`));
+    .pipe(dest(`${options.paths.src.media}`))
 }
 
 ...
