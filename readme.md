@@ -68,7 +68,7 @@ The technique was described here https://www.youtube.com/watch?v=hJ7Rg1821Q0.
 To use the mixin you need to pass an object with variables as props for the mixin. It should contain either `thumb:` or `prefix:` key. `thumb:` key should be used along with `src:` key for image (+image mixin with simple config, aka simple `<img>` tag)
 If an image has more than one resolution (responsive image) it has to `resolutions` key as array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
 
-Using mixin
+Using mixin:
 
 ```sh
 +imgBlur({
@@ -79,6 +79,14 @@ Using mixin
     width: 1920,
     height: 1280
 })(alt="Hero BG" class="" ...)
+```
+
+Compiled html:
+
+```sh
+<div class="blur-load loaded" style="background-image: url(media/Hero-blurred.jpg)">
+    <img width="1920" height="1280" alt="Hero BG" src="media/Hero@1920.jpg" loading="lazy" srcset=" media/Hero@640.jpg 640w,media/Hero@768.jpg 768w,media/Hero@1024.jpg 1024w,media/Hero@1280.jpg 1280w,media/Hero@1366.jpg 1366w,media/Hero@1600.jpg 1600w,media/Hero@1920.jpg 1920w ">
+</div>
 ```
 
 In that case you can create tumbnail image with '-blurred' prefix in its pathname via Figma or other app.
