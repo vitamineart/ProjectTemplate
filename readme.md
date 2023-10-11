@@ -134,7 +134,7 @@ Compiled html:
 </div>
 ```
 
-In that case you can just create a tumbnail image with '-blurred' prefix in its pathname via Figma or other app.
+In that case (ommited `prefix`) you can just create a tumbnail image with '-blurred' prefix in its pathname via Figma or other app.
 
 Another option (using Gulp Task) for creating thumbnails is described below.
 
