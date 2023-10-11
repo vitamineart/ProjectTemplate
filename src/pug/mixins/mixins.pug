@@ -37,7 +37,7 @@ mixin iconMulti(x)
 mixin imgBlur( x )
     div(
         class="blur-load"
-        style=`background-image: url(${ x.thumb || `${mediaFolder}${x.name}-${x.prefix}.${x.ext}`})`
+        style=`background-image: url(${ x.thumb || `${mediaFolder}${x.name}-${x.prefix ? x.prefix : 'blurred' }.${x.ext}`})`
     )
         +image( x )&attributes(attributes)
 

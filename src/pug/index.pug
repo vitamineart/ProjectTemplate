@@ -73,10 +73,10 @@ block page
             //- div(class="blur-load" style="background-image: url(../media/3_thumb.jpg)")
             //-     img(src="../media/3.jpg" alt="alt" width="1448" height="678" class="" loading="lazy")
             +imgBlur({
-                thumb: `${mediaFolder}Hero-blurred.jpg`,
-                src: '../media/Hero@1024.jpg',
-                width: 1920,
-                height: 1280
+                name: 'Hero',
+                ext: 'jpg',
+                dir: mediaFolder,
+                resolutions: [640, 768, 1024, 1280, 1366,1600, 1920]
             })(alt="Hero BG")
 
 
