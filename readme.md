@@ -99,7 +99,7 @@ Using `+imgBlur` for <b>Responsive Image</b> mixin with `prefix` key specified:
     name: 'Hero',
     ext: 'jpg',
     dir: mediaFolder,
-    resolutions: [640, 768, 1024, 1280, 1366,1600, 1920],
+    resolutions: [1366,1600, 1920],
     width: 1920,
     height: 1280
 })(alt="Hero BG" class="" ...)
@@ -109,7 +109,7 @@ Compiled html:
 
 ```sh
 <div class="blur-load loaded" style="background-image: url(media/Hero-thumbnail.jpg)">
-    <img width="1920" height="1280" alt="Hero BG" src="media/Hero@1920.jpg" loading="lazy" srcset=" media/Hero@640.jpg 640w,media/Hero@768.jpg 768w,media/Hero@1024.jpg 1024w,media/Hero@1280.jpg 1280w,media/Hero@1366.jpg 1366w,media/Hero@1600.jpg 1600w,media/Hero@1920.jpg 1920w ">
+    <img width="1920" height="1280" alt="Hero BG" src="media/Hero@1920.jpg" loading="lazy" srcset="media/Hero@1366.jpg 1366w, media/Hero@1600.jpg 1600w, media/Hero@1920.jpg 1920w ">
 </div>
 ```
 
@@ -120,7 +120,7 @@ Using `+imgBlur` mixin with ommited `prefix` key:
     name: 'Hero',
     ext: 'jpg',
     dir: mediaFolder,
-    resolutions: [640, 768, 1024, 1280, 1366,1600, 1920],
+    resolutions: [1366,1600, 1920],
     width: 1920,
     height: 1280
 })(alt="Hero BG" class="" ...)
@@ -130,7 +130,7 @@ Compiled html:
 
 ```sh
 <div class="blur-load loaded" style="background-image: url(media/Hero-blurred.jpg)">
-    <img width="1920" height="1280" alt="Hero BG" src="media/Hero@1920.jpg" loading="lazy" srcset=" media/Hero@640.jpg 640w,media/Hero@768.jpg 768w,media/Hero@1024.jpg 1024w,media/Hero@1280.jpg 1280w,media/Hero@1366.jpg 1366w,media/Hero@1600.jpg 1600w,media/Hero@1920.jpg 1920w ">
+    <img width="1920" height="1280" alt="Hero BG" src="media/Hero@1920.jpg" loading="lazy" srcset="media/Hero@1366.jpg 1366w, media/Hero@1600.jpg 1600w, media/Hero@1920.jpg 1920w ">
 </div>
 ```
 
