@@ -89,7 +89,7 @@ or
 })(alt="Hero BG"  width="1920" height="1280" src="../media/Hero@1600.jpg")
 ```
 
-2. If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
+2. If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. `thumb` option is mandatory while `prefix` is not. If `prefix` is ommited, default `blurred` prefix will be used.
 
 Using `+imgBlur` for <b>Responsive Image</b> mixin with `prefix` key specified:
 
