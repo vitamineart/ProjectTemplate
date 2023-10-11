@@ -113,7 +113,7 @@ Compiled html:
 </div>
 ```
 
-Using `+imgBlur` mixin with ommited `prefix` key:
+Using `+imgBlur` for <b>Responsive Image</b> mixin with ommited `prefix` key:
 
 ```sh
 +imgBlur({
