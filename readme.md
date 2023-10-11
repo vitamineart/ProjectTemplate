@@ -166,3 +166,52 @@ if (document.querySelectorAll(".blur-load").length) {
   });
 }
 ```
+
+as well as remove style for it from CSS:
+
+```sh
+/* lazy load img with blur effect start */
+  .blur-load {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .blur-load:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: hsl(0 100% 100% / 0.2);
+    opacity: 1;
+    animation: pulse 2.5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .blur-load.loaded {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .blur-load.loaded::before {
+    content: none;
+  }
+  .blur-load > img {
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .blur-load.loaded > img {
+    opacity: 1;
+  }
+  /* lazy load img with blur effect end */
+```
