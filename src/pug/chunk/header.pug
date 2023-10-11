@@ -1,0 +1,20 @@
+header(class="header relative bg-white" class=`${headerShadow === false ? '' : 'header-shadow'}`)
+    .container.flex.justify-between.items-center.max-w-7xl
+        a(class=`logo` href="/" aria-label="Circular multi-color logo for Tungsten Advertising Agency" style=`width: ${ currentUrl == '/' ? '55' : '170' }px`)
+            +iconMulti({
+                icon: 'ball',
+                class: 'w-10 h-10 my-2'
+            })
+
+
+
+
+
+
+        a(class="nav-menu " href="mailto:hello@tngstn.com" target="_blank" rel="noopener noreferrer" aria-label="Contact us button")
+            +iconMono({
+                icon:"envelope-closed",
+                class: 'fill-red-300 w-6 h-6'
+            })
+
+

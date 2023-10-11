@@ -1,0 +1,75 @@
+mixin team-member(x)
+    span(class="")
+        i #{x.role}:
+        b.font-proxima-bold  #{x.name}
+    .team-contacts.flex.items-center
+        - let social = Object(x.contacts)
+        each val, key in social
+            a(href=`${val}` class="text-gray-light hover:text-blue-light transition-colors w-11 h-11 p-2" target="_blank" aria-label=`${x.name + ' ' +  key}`)
+                +iconMono({
+                    icon: key,
+                    class: 'w-full h-full fill-current'
+                })
+
+
+mixin team(team)
+    div(class="container py-12 md:py-20")
+        #team.max-w-lg.mx-auto
+            each teamMember, index in team
+                div(class="border-b last:border-0 will-change-transform-opacity team-member")
+                    .flex.items-center.justify-between(style="min-height: 45px;")
+                        +team-member(teamMember)
+                    if teamMember.comment
+                        .clients-comment.text-xs.text-gray-400.mt-2 !{teamMember.comment}
+
+
+
+
+//- svg icons
+mixin iconMono(x)
+    svg(class=`svg ${x.class || 'fill-current w-6 h-6 pointer-events-none'}`)
+        use(xlink:href=`media/icons/icons-sprite-mono.svg#${x.icon}`)
+
+mixin iconMulti(x)
+    svg(class=`svg` class=x.class style=x.style)
+        use(xlink:href=`media/icons/icons-sprite-multi.svg#${x.icon}`)
+
+mixin imgBlur( x )
+    div(
+        class="blur-load"
+        style=`background-image: url(${ x.thumb || `${mediaFolder}${x.name}-${x.prefix}.${x.ext}`})`
+    )
+        +image( x )&attributes(attributes)
+
+
+
+mixin image(x)
+    if x.resolutions
+        - let resolutions = x.resolutions || [640, 768, 1024, 1366, 1600, 1920];
+        img(
+            id=x.id
+            width=x.width
+            height=x.height
+            alt=x.alt
+            src = x.src || `${x.dir}${x.name}@${resolutions[ resolutions.length - 1 ]}.${x.ext}`
+            loading = x.loading || 'lazy'
+            srcset= `
+                ${
+                    resolutions.map((resolution, index, arr) => {
+                        return `${x.dir}${x.name}@${resolution}.${x.ext} ${resolution}w`
+                    })
+                }
+            `
+            sizes=x.sizes
+        )&attributes(attributes)
+    else if !x.resolutions && x.src
+        img(
+            id=x.id
+            width=x.width
+            height=x.height
+            alt=x.alt
+            src=x.src
+            loading = x.loading || 'lazy'
+        )&attributes(attributes)
+
+

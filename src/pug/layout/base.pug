@@ -1,0 +1,37 @@
+include ../mixins/mixins
+block variables
+doctype html
+html(lang="en")
+    head
+        meta(name="theme-color" content="#ffffff")
+        link(rel="icon" href="media/favicon.svg")
+        link(rel="mask-icon" href="media/mask-icon.svg" color="#000000")
+        link(rel="apple-touch-icon" href="media/apple-touch-icon.png")
+        link(rel="manifest" href="manifest.json")
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content=metaDescription)
+        title= pageTitle
+
+        block preload
+            link(rel="preload" href="fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin)
+            link(rel="preload" href="fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin)
+            style.font-style.
+                @font-face { font-family: "ProximaNovaA-Bold"; src: url('fonts/ProximaNovaABold.woff2') format('woff2'), url('fonts/ProximaNovaABold.woff') format('woff'); font-display: swap; } @font-face { font-family: "ProximaNovaA-Regular"; src: url('fonts/ProximaNovaARegular.woff2') format('woff2'), url('fonts/ProximaNovaARegular.woff') format('woff'); font-display: swap;}
+        block head
+            link(href="css/style.css" rel="stylesheet")
+
+    body
+        include ../chunk/header
+        main
+            block page
+
+
+        include ../chunk/footer
+
+        block footer_scripts
+            script(defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js")
+            script(defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js")
+            script(defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js")
+            script(src="js/main.js" defer)

@@ -1,0 +1,55 @@
+footer.border-t-2.border-slate-600
+    .container
+        div(class=" ")
+            | Tungsten
+            | <br>
+            //- | #[small(class="text-xs font-proxima opacity-50") A California Corporation]
+        .mt-5.
+            268 Bush Street, #3438 <br>
+            San Francisco, CA 94104<br>
+            (415) 269-6931
+        .mt-5
+            a.text-white.font-proxima-bold(href="mailto:hello@tngstn.com" target="_blank" rel="noopener noreferrer") hello@tngstn.com
+            -
+                const social = [
+                    {
+                        link:"https://www.facebook.com/TungstenAdvertising",
+                        icon:"facebook"
+                    },
+                    {
+                        link:"https://twitter.com/TungstenAds",
+                        icon:"twitter"
+                    },
+                    {
+                        link:"https://www.linkedin.com/company/tungsten-advertising/",
+                        icon:"linkedin"
+                    },
+                    {
+                        link:"mailto:hello@tngstn.com",
+                        icon:"envelope"
+                    }
+                ]
+        .mt-5
+            .flex.space-x-3.mt-3
+                each x in social
+                    a(class="inline-block" href=`${x.link}` target="_blank" aria-label=`${x.icon}`)
+                        +iconMono({
+                            icon: `${x.icon}`,
+                            class: 'w-8 h-8 fill-current',
+                        })
+
+
+
+
+        .mt-8
+            div Copyright ©2023 Tungsten All Rights Reserved.
+            //- a(href="#" class="text-blue-light font-proxima-bold no-underline") Privacy Policy
+
+
+    button(id="go-to-top" class="text-red-600")
+        +iconMono({
+            icon: 'wiki',
+            class: 'fill-current w-5 h-5'
+        })
+
+

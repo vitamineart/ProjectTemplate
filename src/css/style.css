@@ -1,0 +1,83 @@
+@tailwind base;
+@layer base {
+  :root {
+    --c-blue-light: #338bc8;
+    --c-blue-link: #2581d0;
+    --c-blue: #185599;
+    --c-blue-dark: #071f51;
+    --c-indigo-light: #76769f;
+    --c-indigo: #121341;
+    --f-proxima: "ProximaNovaA-Regular", sans-serif;
+    --f-proxima-bold: "ProximaNovaA-Bold", sans-serif;
+  }
+  .font-proxima {
+    font-family: var(--f-proxima);
+  }
+  .font-proxima-bold {
+    font-family: var(--f-proxima-bold);
+  }
+  body {
+    @apply font-proxima;
+  }
+  a {
+    /* @apply underline text-blue-light; */
+    color: var(--c-blue-light);
+  }
+  a:hover {
+    @apply no-underline;
+  }
+  .container {
+    @apply px-6 sm:px-8 md:px-10 mx-auto max-w-5xl;
+  }
+  b,
+  strong {
+    @apply font-proxima-bold;
+  }
+
+  /* lazy load img with blur effect start */
+  .blur-load {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .blur-load:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: hsl(0 100% 100% / 0.2);
+    opacity: 1;
+    animation: pulse 2.5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .blur-load.loaded {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .blur-load.loaded::before {
+    content: none;
+  }
+  .blur-load > img {
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .blur-load.loaded > img {
+    opacity: 1;
+  }
+  /* lazy load img with blur effect end */
+}
+@tailwind components;
+@tailwind utilities;
