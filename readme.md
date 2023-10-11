@@ -71,10 +71,22 @@ To use the mixin you need to pass an object with variables as props for the mixi
 
 `thumb:` key should be used for `+image` mixin with simple config, aka simple `<img>` tag.
 `src` key is also a string that should be a full path to an image like `'../media/image.jpg'`
-`src` key can be ommited, but another option to give a path to an image should be used: via attributes. Example:
+`src` key can be ommited, but another option to give a path to an image should be used - via attributes. Example:
 
+```sh
+ +imgBlur({
+    thumb: '../media/Hero-blurred.jpg',
+    src: "../media/Hero@1600.jpg",
+    height: 1280
+})(alt="Hero BG"  width="1920"  )
 ```
 
+or
+
+```sh
+ +imgBlur({
+    thumb: '../media/Hero-blurred.jpg',
+})(alt="Hero BG"  width="1920" height="1280" src="../media/Hero@1600.jpg")
 ```
 
 If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
