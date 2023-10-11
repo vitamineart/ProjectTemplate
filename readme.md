@@ -61,14 +61,14 @@ To change the path of files and destination/build folder, edit options in **conf
 
 ## Image Lazy loading with thumbnail blurred preview
 
-`mixins.pug` contains mixin imgBlur for an image loading with thumbnail preview.
+`mixins.pug` contains mixin `+imgBlur` for an image loading with thumbnail preview.
 
 The technique was described here https://www.youtube.com/watch?v=hJ7Rg1821Q0.
 
 To use the mixin you need to pass an object with variables as props for the mixin. It should contain either `thumb:` or `prefix:` key. `thumb:` key should be used along with `src:` key for image (+image mixin with simple config, aka simple `<img>` tag)
 If an image has more than one resolution (responsive image) it has to `resolutions` key as array and `prefix` as a string. If `prefix` is ommited , default `blurred` prefix will be used.
 
-Using mixin:
+Using `+imgBlur` mixin with ommited `prefix` key:
 
 ```sh
 +imgBlur({
@@ -89,7 +89,8 @@ Compiled html:
 </div>
 ```
 
-In that case you can create tumbnail image with '-blurred' prefix in its pathname via Figma or other app.
+In that case you can just create a tumbnail image with '-blurred' prefix in its pathname via Figma or other app.
+
 Other option (using Gulp Task) for creating thumbnails is described below.
 
 ## Creating blurred thumbnails easy (using Gulp Task)
