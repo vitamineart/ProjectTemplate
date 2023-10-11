@@ -86,7 +86,7 @@ function devStyles() {
     .pipe(dest(options.paths.dist.css));
 }
 
-function imgThumbs() {
+function imgResize() {
   return src(`${options.paths.src.media}/Hero@1920.jpg`)
     .pipe(
       imageResize({
@@ -337,5 +337,5 @@ exports.devClean = devClean;
 exports.prodSVGSprite = prodSVGSprite;
 exports.moveRobotsTXT = moveRobotsTXT;
 exports.moveManifestProd = moveManifestProd;
-exports.imgThumbs = imgThumbs;
+exports.imgResize = imgResize;
 // exports.prodFavicon = prodFavicon;
