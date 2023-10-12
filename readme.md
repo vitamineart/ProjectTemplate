@@ -65,7 +65,7 @@ To change the path of files and destination/build folder, edit options in **conf
 
 The technique was described here https://www.youtube.com/watch?v=hJ7Rg1821Q0.
 
-To use the mixin you need to pass an object with variables as props for the mixin. It should contain either 1) `thumb:` or 2) `prefix:` key.
+To use the mixin you need to pass an object with variables as props for the mixin. It should contain either 1) `thumb:` or 2) `suffix:` key.
 
 1. `thumb:` key is a string that should be a full path to an image like `'../media/image-blurred.jpg'`
 
@@ -89,13 +89,13 @@ or
 })(alt="Hero BG"  width="1920" height="1280" src="../media/Hero@1600.jpg")
 ```
 
-2. If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `prefix` as a string. `thumb` option is mandatory while `prefix` is not. If `prefix` is ommited, default `blurred` prefix will be used.
+2. If an image has more than one resolution (responsive image) it has to have `resolutions` key as an array and `suffix` as a string. `thumb` option is mandatory while `suffix` is not. If `suffix` is ommited, default `blurred` suffix will be used.
 
-Using `+imgBlur` for <b>Responsive Image</b> mixin with `prefix` key specified:
+Using `+imgBlur` for <b>Responsive Image</b> mixin with `suffix` key specified:
 
 ```sh
 +imgBlur({
-    prefix: 'thumbnail',
+    suffix: 'thumbnail',
     name: 'Hero',
     ext: 'jpg',
     dir: mediaFolder,
@@ -113,7 +113,7 @@ Compiled html:
 </div>
 ```
 
-Using `+imgBlur` for <b>Responsive Image</b> mixin with ommited `prefix` key:
+Using `+imgBlur` for <b>Responsive Image</b> mixin with ommited `suffix` key:
 
 ```sh
 +imgBlur({
@@ -134,7 +134,7 @@ Compiled html:
 </div>
 ```
 
-In that case (ommited `prefix`) you can just create a tumbnail image with '-blurred' prefix in its pathname via Figma or other app.
+In that case (ommited `suffix`) you can just create a tumbnail image with '-blurred' suffix in its pathname via Figma or other app.
 
 Another option (using Gulp Task) for creating thumbnails is described below.
 
