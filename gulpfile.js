@@ -87,7 +87,7 @@ function devStyles() {
 }
 
 function imgResize() {
-  return src(`${options.paths.src.media}/Hero@1920.jpg`)
+  return src(`${options.paths.src.media}/thumbs/**.*`)
     .pipe(
       imageResize({
         width: 10
@@ -96,7 +96,8 @@ function imgResize() {
     .pipe(
       rename(function (path) {
         // Updates the object in-place
-        path.basename = "hhero-blurred";
+        // path.basename = "hhero-blurred";
+        path.basename += "-blurred";
       })
     )
     .pipe(dest(`${options.paths.src.media}`));
